@@ -1,4 +1,4 @@
- const characters = [
+        const characters = [
             {
                 id: 1,
                 name: "Elena Gilbert",
