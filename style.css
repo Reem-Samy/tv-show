@@ -581,6 +581,39 @@ body::before {
     text-align: center;
 }
 
+.quantity-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+    gap: 12px;
+}
+
+.qty-btn {
+    padding: 6px 14px;
+    background: linear-gradient(135deg, #d4af37 0%, #8b6914 100%);
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 18px;
+}
+
+.qty-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.5);
+}
+
+.qty-number {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    min-width: 24px;
+    text-align: center;
+}
+
+
 .merch-title {
     font-family: 'Cinzel', serif;
     font-size: 22px; 
