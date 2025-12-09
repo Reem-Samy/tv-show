@@ -155,31 +155,20 @@ function decrementQty(btn) {
 function addToCart(btn) {
     const qty = btn.parentElement.querySelector('.qty-number').textContent;
     const title = btn.parentElement.querySelector('.merch-title').textContent;
-    alert(`${qty} × ${title} added to cart!`);
+   
 }
 
-// عداد الـcart
 let cartCount = 0;
 
-// عنصر العدّاد في الـNavbar
 const cartCountElem = document.getElementById('cart-count');
 
-// كل أزرار الـMerch
 const merchButtons = document.querySelectorAll('.merch-btn');
 
-// إضافة حدث لكل زر
 merchButtons.forEach(btn => {
     btn.addEventListener('click', () => {
         cartCount++;
-        cartCountElem.textContent = cartCount; // تحديث العدد
+        cartCountElem.textContent = cartCount; 
+
+        
     });
 });
-
-// عند الضغط على أيقونة الـcart
-function toggleCart() {
-    if(cartCount === 0) {
-        alert('Your cart is empty!');
-    } else {
-        alert(`You have ${cartCount} item${cartCount > 1 ? 's' : ''} in your cart.`);
-    }
-}
