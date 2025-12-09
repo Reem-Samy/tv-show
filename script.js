@@ -138,3 +138,22 @@ card.innerHTML = `
         displayCharacters();
         generateRandomQuote();
     };
+
+
+    function incrementQty(btn) {
+    const qtySpan = btn.parentElement.querySelector('.qty-number');
+    let currentQty = parseInt(qtySpan.textContent);
+    qtySpan.textContent = currentQty + 1;
+}
+
+function decrementQty(btn) {
+    const qtySpan = btn.parentElement.querySelector('.qty-number');
+    let currentQty = parseInt(qtySpan.textContent);
+    if (currentQty > 1) qtySpan.textContent = currentQty - 1;
+}
+
+function addToCart(btn) {
+    const qty = btn.parentElement.querySelector('.qty-number').textContent;
+    const title = btn.parentElement.querySelector('.merch-title').textContent;
+    alert(`${qty} × ${title} added to cart!`);
+}
