@@ -134,6 +134,35 @@ body::before {
     text-shadow: 0 0 15px rgba(212, 175, 55, 0.9);
 }
 
+.cart-container {
+    position: relative;
+    cursor: pointer;
+    margin-left: 20px;
+}
+
+.cart-icon svg {
+    width: 40px;
+    height: 40px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: #d4af37;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 8px rgba(212,175,55,0.7);
+}
+
+
 
 .hero {
     height: 100vh;
