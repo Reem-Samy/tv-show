@@ -436,3 +436,82 @@ body::before {
     font-size: 16px; 
     color: #888;
 }
+
+
+.episodes-section {
+    padding: 96px 5%; 
+    background: linear-gradient(180deg, #000 0%, #0a0000 100%);
+    position: relative;
+}
+
+.timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #d4af37, transparent);
+}
+
+.episode-item {
+    margin-bottom: 64px; 
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.episode-item:nth-child(odd) {
+    flex-direction: row;
+}
+
+.episode-item:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.episode-content {
+    width: 45%;
+    background: linear-gradient(135deg, rgba(26, 0, 0, 0.8) 0%, rgba(10, 0, 0, 0.9) 100%);
+    border: 2px solid #d4af37;
+    border-radius: 15px;
+    padding: 32px;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.episode-content:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px rgba(212, 175, 55, 0.3);
+}
+
+.episode-marker {
+    width: 30px;
+    height: 30px;
+    background: #d4af37;
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+    z-index: 2;
+}
+
+.episode-number {
+    font-family: 'Cinzel', serif;
+    color: #d4af37;
+    font-weight: 700;
+    font-size: 18px; 
+    margin-bottom: 8px; 
+}
+
+.episode-title {
+    font-size: 24px; 
+    color: #fff;
+    margin-bottom: 12px; 
+}

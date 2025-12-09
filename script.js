@@ -61,3 +61,80 @@
         { text: "I think you can either be friends with someone or in love with them. I don't think you can be both.", author: "Elena Gilbert" },
         { text: "The truth is, I've tried to stop thinking about you. And I can't.", author: "Stefan Salvatore" }
     ];
+
+        function createParticles() {
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 30;
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 15 + 's';
+            particle.style.animationDuration = (15 + Math.random() * 10) + 's';
+            particlesContainer.appendChild(particle);
+        }
+    }
+
+    function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }
+
+    function generateRandomQuote() {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        const randomQuote = quotes[randomIndex];
+        
+        const quoteText = document.getElementById('quote-text');
+        const quoteAuthor = document.getElementById('quote-author');
+        
+        quoteText.style.opacity = '0';
+        quoteAuthor.style.opacity = '0';
+        
+        setTimeout(() => {
+            quoteText.textContent = randomQuote.text;
+            quoteAuthor.textContent = `— ${randomQuote.author}`;
+            
+            quoteText.style.transition = 'opacity 0.5s';
+            quoteAuthor.style.transition = 'opacity 0.5s';
+            quoteText.style.opacity = '1';
+            quoteAuthor.style.opacity = '1';
+        }, 300);
+    }
+
+    function displayCharacters() {
+        const grid = document.getElementById('characters-grid');
+        
+        characters.forEach(character => {
+            const card = document.createElement('div');
+            card.className = 'character-card';
+            card.onclick = () => goToCharacterPage(character.id);
+            
+card.innerHTML = `
+    <div class="character-img">
+        <img src="${character.emoji}" alt="${character.name}">
+    </div>
+    <div class="character-info">
+        <h3 class="character-name">${character.name}</h3>
+        <p class="character-role">${character.role}</p>
+        <p class="character-actor">Portrayed by ${character.actor}</p>
+    </div>
+`;
+
+            
+            grid.appendChild(card);
+        });
+    }
+
+    function goToCharacterPage(characterId) {
+        sessionStorage.setItem('selectedCharacterId', characterId);
+        window.location.href = 'character.html';
+    }
+
+    window.onload = function() {
+        createParticles();
+        displayCharacters();
+        generateRandomQuote();
+    };
